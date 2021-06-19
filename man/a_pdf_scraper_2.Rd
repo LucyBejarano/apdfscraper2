@@ -3,17 +3,26 @@
 \name{a_pdf_scraper_2}
 \alias{a_pdf_scraper_2}
 \title{A pdf scraper function v2
-This function allows you to scrap specific pdfs.
-which prints 'Hello, world!'.
-Example:
-a_pdf_scraper(pdf_location, csv_location)}
+This function allows you to scrap one or more pdfs with one or several pages.
+The scraping method results into a .csv file per each pdf processed.
+To do so, please follow the following example.}
 \usage{
 a_pdf_scraper_2(pdf_location, csv_location)
 }
 \description{
-A pdf scraper function v2
-This function allows you to scrap specific pdfs.
-which prints 'Hello, world!'.
+Copy step 1 and 2 and replace with your folder locations.
+Copy step 3 and press ctrl+enter
 Example:
+}
+\details{
+Step 1:
+pdf_location <-"C:/the name of the folder where is my PDF/"
+
+Step 2:
+csv_location <-"C:/the name of the folder where is my PDF/"
+
+Step 3:
 a_pdf_scraper(pdf_location, csv_location)
+
+Finally, check the .csv folder to see the pdf converted.
 }
