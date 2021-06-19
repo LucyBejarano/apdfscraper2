@@ -1,4 +1,6 @@
 #' A pdf scraper function v2
+#'
+#' Pdf to csv converter
 #
 #' This function allows you to scrap one or more pdfs with one or several pages.
 #' The scraping method results into a .csv file per each pdf processed.
@@ -26,6 +28,9 @@
 
 
 a_pdf_scraper_2 <- function(pdf_location, csv_location) {
+
+
+
   # load packages
 
   library(pdftools)
@@ -56,10 +61,16 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
 
   # Tidy all pdfs listed
 
+  # non stop
+  error_result <-tryCatch({
+    print(list_file[n_pdf])
+
+    }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
+
   for (n_pdf in seq_along(1:length(temp))) {
     # Data splitting and cleaning ################################################
 
-    data <- temp[[n_pdf]] %>%
+      data <- temp[[n_pdf]] %>%
       strsplit("\n")
 
     data <- unlist(data) %>%
@@ -202,4 +213,5 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
   }
 
   print("Scrapping completed")
+  print(error_result)
 }

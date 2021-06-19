@@ -2,19 +2,22 @@
 % Please edit documentation in R/apdf_scraper2.R
 \name{a_pdf_scraper_2}
 \alias{a_pdf_scraper_2}
-\title{A pdf scraper function v2
-This function allows you to scrap one or more pdfs with one or several pages.
-The scraping method results into a .csv file per each pdf processed.
-To do so, please follow the following example.}
+\title{A pdf scraper function v2}
 \usage{
 a_pdf_scraper_2(pdf_location, csv_location)
 }
 \description{
+Pdf to csv converter
+This function allows you to scrap one or more pdfs with one or several pages.
+The scraping method results into a .csv file per each pdf processed.
+To do so, please follow the following example.
+}
+\details{
 Copy step 1 and 2 and replace with your folder locations.
 Copy step 3 and press ctrl+enter
 Example:
-}
-\details{
+
+
 # Step 1.
 pdf_location <-"C:/the name of the folder where is my PDF/"
 
