@@ -15,13 +15,13 @@ Copy step 3 and press ctrl+enter
 Example:
 }
 \details{
-Step 1:
+# Step 1.
 pdf_location <-"C:/the name of the folder where is my PDF/"
 
-Step 2:
+# Step 2.
 csv_location <-"C:/the name of the folder where is my PDF/"
 
-Step 3:
+# Step 3.
 a_pdf_scraper(pdf_location, csv_location)
 
 Finally, check the .csv folder to see the pdf converted.
