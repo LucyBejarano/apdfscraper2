@@ -132,7 +132,8 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
 
     # Filter empty rows
     employee_info <- employee_info %>%
-      filter(`Apellidos y Nombres(s)`!="")
+      filter(`Apellidos y Nombres(s)`!=""|Nacionalidad!="")
+
 
 
     # Extract data amounts ############################################################
@@ -149,7 +150,7 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
     # Reduces repeated whitespace inside a string
     data_amount <- str_squish(data_amount)
 
-    # Split all numbers cosnsidering an space
+    # Split all numbers considering an space
     data_amount <- str_split_fixed(data_amount, " ", 13)
     data_amount <- data.frame(data_amount, stringsAsFactors = FALSE)
 
