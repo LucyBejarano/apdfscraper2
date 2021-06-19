@@ -212,6 +212,7 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
 
   }
 
-  print("Scrapping completed")
+
   print(error_result)
+  print("Scrapping completed")
 }
