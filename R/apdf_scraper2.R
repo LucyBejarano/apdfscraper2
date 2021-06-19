@@ -63,9 +63,9 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
 
   # non stop
   error_result <-tryCatch({
-    print(list_file[n_pdf])
 
-    }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
+
+
 
   for (n_pdf in seq_along(1:length(temp))) {
     # Data splitting and cleaning ################################################
@@ -211,7 +211,8 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
     )
 
   }
-
+    print(list_file[n_pdf])
+  }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
 
   print(error_result)
   print("Scrapping completed")
