@@ -130,6 +130,10 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
     employee_info <- employee_info %>%
       relocate(Genero, .after = `Fecha de Nacimiento`)
 
+    # Filter empty rows
+    employee_info <- employee_info %>%
+      filter(`Apellidos y Nombres(s)`!="")
+
 
     # Extract data amounts ############################################################
 
@@ -188,7 +192,7 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
     )
 
     # Save .csv
-    write.csv(
+    write.csv2(
       data_final,
       file = paste0(csv_location, name_csv, ".csv") ,
       row.names = FALSE
