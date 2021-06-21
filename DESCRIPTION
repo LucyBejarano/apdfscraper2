@@ -1,10 +1,10 @@
 Package: apdfscraper2
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A personalized pdf to csv converter
 Version: 0.1.0
 Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: This function allows you to scrap one or more pdfs with one or several pages.
+Description: This function allows you to scrap one or more specific pdfs with one or several pages.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

@@ -61,13 +61,14 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
 
   # Tidy all pdfs listed
 
-  # non stop if error
-  tryCatch({
+
 
 
 
 
   for (n_pdf in seq_along(1:length(temp))) {
+    # non stop if error
+    tryCatch({
     # Data splitting and cleaning ################################################
 
       data <- temp[[n_pdf]] %>%
@@ -209,10 +210,10 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
       file = paste0(csv_location, name_csv, ".csv") ,
       row.names = FALSE
     )
-    cat(list_file[n_pdf],"process completed.","\n")
+    cat(list_file[n_pdf],"process completed","\n")
+    }, error=function(e){cat("ERROR :",conditionMessage(e),". Check file: ",list_file[n_pdf],"\n")
+      skip_to_next <- TRUE})
 
   }
-
-  }, error=function(e){cat("ERROR :",conditionMessage(e),". Check file: ",list_file[n_pdf],"\n")})
-
+  cat("All pdfs have been processed","\n")
 }
