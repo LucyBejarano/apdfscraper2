@@ -209,10 +209,10 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
       file = paste0(csv_location, name_csv, ".csv") ,
       row.names = FALSE
     )
+    cat(list_file[n_pdf],"process completed.","\n")
 
   }
 
   }, error=function(e){cat("ERROR :",conditionMessage(e),". Check file: ",list_file[n_pdf],"\n")})
 
-  print("Scrapping completed")
 }
