@@ -61,8 +61,8 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
 
   # Tidy all pdfs listed
 
-  # non stop
-  error_result <-tryCatch({
+  # non stop if error
+  tryCatch({
 
 
 
@@ -211,9 +211,8 @@ a_pdf_scraper_2 <- function(pdf_location, csv_location) {
     )
 
   }
-    print(list_file[n_pdf])
-  }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
 
-  print(error_result)
+  }, error=function(e){cat("ERROR :",conditionMessage(e),". Check file: ",list_file[n_pdf],"\n")})
+
   print("Scrapping completed")
 }
